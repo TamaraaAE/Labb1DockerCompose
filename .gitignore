@@ -416,3 +416,7 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+.env
+/Labb1DockerCompose2/appsettings.json
+/Labb1DockerCompose2/appsettings.Development.json
