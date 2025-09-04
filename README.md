@@ -16,6 +16,7 @@ Testa API:et i swagger genom att öppna:
 https://localhost:7123/swagger/index.html
 
 Tekniska val till detta projekt är:
+
 -> .NET 8 Minimal API – modernt och enkelt
 
 -> Entity Framework Core – för databasmodell (Code First)
