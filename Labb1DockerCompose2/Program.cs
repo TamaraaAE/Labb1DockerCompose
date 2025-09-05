@@ -38,6 +38,19 @@ namespace Labb1DockerCompose2
                 return Results.Created($"/products/{product.Id}", product);
             });
 
+            //DELETE
+            app.MapDelete("/products/{id}", async (ProductContext db, int id) =>
+            {
+                var product = await db.Products.FindAsync(id);
+                if (product == null)
+                {
+                    return Results.NotFound();
+                }
+                db.Products.Remove(product);
+                await db.SaveChangesAsync();
+                return Results.NoContent();
+            });
+
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {

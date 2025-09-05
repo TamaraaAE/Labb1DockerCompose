@@ -9,12 +9,15 @@ services:
     depends_on:
       - db
     environment:
-  ConnectionStrings__DefaultConnection: "${DEFAULT_CONNECTION_STRING}",
+      - ConnectionStrings__DefaultConnection:${DEFAULT_CONNECTION_STRING}
+
   db:
     image: mcr.microsoft.com/mssql/server
     environment:
-      SA_PASSWORD: "${SA_PASSWORD}"
-      ACCEPT_EULA: "Y"
+      - SA_PASSWORD: "${SA_PASSWORD}"
+      - ACCEPT_EULA: "Y"
     ports:
       - "1433:1433"
+
+
 
